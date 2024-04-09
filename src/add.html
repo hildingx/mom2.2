@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/addexp.js"></script>
     <link rel="stylesheet" href="css/main.scss">
 </head>
 <body>
@@ -18,7 +18,22 @@
         </nav>
     </header>
     <main>
-        
+        <h1>Lägg till arbetserfarenhet</h1>
+        <form id="workExpForm">
+            <label for="companyname">Företagsnam:</label>
+            <input type="text" id="companyname" placeholder="Företagsnamn" required>
+            <label for="jobtitle">Företagsnam:</label>
+            <input type="text" id="jobtitle" placeholder="Jobbtitel" required>
+            <label for="location">Företagsnam:</label>
+            <input type="text" id="location" placeholder="Plats" required>
+            <label for="startdate">Företagsnam:</label>
+            <input type="date" id="startdate" placeholder="Startdatum" required>
+            <label for="enddate">Företagsnam:</label>
+            <input type="date" id="enddate" placeholder="Slutdatum" required>
+            <label for="description">Företagsnam:</label>
+            <textarea id="description" placeholder="Beskrivning" required></textarea>
+            <button class="button submit" type="submit">Lägg till arbetserfarenhet</button>
+        </form>
     </main>
     <footer>
 

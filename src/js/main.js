@@ -5,7 +5,7 @@ window.onload = () => {
 //Funktion för att hämta data från api
 async function fetchData() {
     try {
-        await new Promise(resolve => setTimeout(resolve, 6000));
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
         const response = await fetch(`https://dt207g-mom2-1.onrender.com/api/workexperiences/`);
         const data = await response.json();
