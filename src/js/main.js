@@ -1,3 +1,7 @@
+window.onload = () => {
+    updateDOM();
+};
+
 //Funktion för att hämta data från api
 async function fetchData() {
     try {
@@ -15,10 +19,28 @@ async function updateDOM() {
     try {
         const data = await fetchData();
 
-        
+        const workExpsEl = document.getElementById('workExps');
+        workExpsEl.innerHTML = '';
+
+        //Iterera över varje objekt
+        data.forEach(exp => {
+            
+            //Formatera datum - ta bort klockslag
+            const startDate = exp.startdate.split('T')[0];
+            const endDate = exp.enddate.split('T')[0];
+
+            //Skriver ut i DOM
+            workExpsEl.innerHTML += `
+                <div class="workExp">
+                    <h2>${exp.jobtitle} @ ${exp.companyname}</h2>
+                    <p>Plats: ${exp.location}</p>
+                    <p>Startdatum: ${startDate}</p>
+                    <p>Slutdatum: ${endDate}</p>
+                    <p>Beskrivning: ${exp.description}</p>
+                </div>
+            `;
+        });
     } catch (error) {
         console.error('Problem med att uppdatera DOM', error);
     }
-    
 }
-
