@@ -1,0 +1,121 @@
+//Styling av element. 
+//Grid, flexbox och containers.
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #5a6f64;
+    height: 50px;
+    box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 4px 5px -5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #c7c7c7;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.current {
+    color: #fff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    background-color: #f7ebe6;
+
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+#loadingIndicator {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#workExps {
+    background-color: #f8f8f8;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    margin: 0 50px 50px 50px;
+    width: 80%;
+    max-width: 800px;
+
+    .workExp {
+        padding: 50px;
+        padding-top: 20px;
+    
+        @media (max-width: 570px) {
+            padding: 25px 15px;
+        }
+    }
+    
+    .spanLine {
+        display: block;
+        height: 1px;
+        background-color: #ff7f50;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    span:last-of-type {
+        display: none;
+    }
+}
+
+footer {
+    text-align: center;
+    background-color: #5a6f64;
+    color: #fff;
+    padding: 50px;
+    box-shadow: 0 -8px 10px -5px rgba(0, 0, 0, 0.2), 0 -4px 5px -5px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    z-index: 1;
+}

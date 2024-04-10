@@ -6,37 +6,43 @@
     <title>Document</title>
     <script type="module" src="js/addexp.js"></script>
     <link rel="stylesheet" href="css/main.scss">
+    <link rel="stylesheet" href="css/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="current">Startsida</a></li>
-                <li><a href="about.html">Om</a></li>
-                <li><a href="add.html">Lägg till </a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Lägg till arbetserfarenhet</h1>
-        <form id="workExpForm">
-            <label for="companyname">Företagsnam:</label>
-            <input type="text" id="companyname" placeholder="Företagsnamn" required>
-            <label for="jobtitle">Företagsnam:</label>
-            <input type="text" id="jobtitle" placeholder="Jobbtitel" required>
-            <label for="location">Företagsnam:</label>
-            <input type="text" id="location" placeholder="Plats" required>
-            <label for="startdate">Företagsnam:</label>
-            <input type="date" id="startdate" placeholder="Startdatum" required>
-            <label for="enddate">Företagsnam:</label>
-            <input type="date" id="enddate" placeholder="Slutdatum" required>
-            <label for="description">Företagsnam:</label>
-            <textarea id="description" placeholder="Beskrivning" required></textarea>
-            <button class="button submitBtn" type="submit">Lägg till arbetserfarenhet</button>
-        </form>
-    </main>
-    <footer>
-
-    </footer>
+    <div class="page-container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startsida</a></li>
+                    <li><a href="about.html">Om</a></li>
+                    <li><a href="add.html" class="current">Lägg till </a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Lägg till arbetserfarenhet</h1>
+            <form id="workExpForm">
+                <label for="companyname">Företagsnam:</label>
+                <input type="text" id="companyname" placeholder="Företagsnamn" required>
+                <label for="jobtitle">Jobbtitel:</label>
+                <input type="text" id="jobtitle" placeholder="Jobbtitel" required>
+                <label for="location">Plats:</label>
+                <input type="text" id="location" placeholder="Plats" required>
+                <label for="startdate">Startdatum:</label>
+                <input type="date" id="startdate" placeholder="Startdatum" required>
+                <label for="enddate">Slutdatum:</label>
+                <input type="date" id="enddate" placeholder="Slutdatum" required>
+                <label for="description">Beskrivning:</label>
+                <textarea id="description" placeholder="Beskrivning" required></textarea>
+                <button class="button submitBtn" type="submit">Lägg till arbetserfarenhet</button>
+            </form>
+        </main>
+        <footer>
+            <p>Alexander Hilding</p>
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,0 +1,56 @@
+//Komponenter - knappar, länkar, formulär, modaler osv.
+
+.button {
+    background-color: #ff7f50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff5f25;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 300px;
+    padding: 0 20px;
+
+    label {
+        margin: 15px 0 5px 0;
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="date"],
+    textarea {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    textarea {
+        height: 100px;
+        resize: vertical;
+    }
+
+    .submitBtn {
+        margin: 25px;
+    }
+}
+
+

@@ -8,7 +8,7 @@ window.onload = () => {
 async function fetchData() {
     try {
         //Används vid test av laddningsindikator
-        //await new Promise(resolve => setTimeout(resolve, 1000));
+        //await new Promise(resolve => setTimeout(resolve, 11000));
 
         const response = await fetch(`https://dt207g-mom2-1.onrender.com/api/workexperiences/`);
         const data = await response.json();
@@ -24,6 +24,26 @@ async function updateDOM() {
     //Laddningsindikator
     const loadingIndicatorEl = document.getElementById('loadingIndicator');
     loadingIndicatorEl.style.display = 'block';
+
+    //Funktioner för att lägga till extra text om datan tar lång tid att ladda
+    setTimeout(() => {
+        const p = document.createElement('p');
+        p.textContent = 'Utvecklarna på Render måste ha tryckt på snooze-knappen igen...';
+        loadingIndicatorEl.appendChild(p);
+    }, 3000);
+
+    setTimeout(() => {
+        const p = document.createElement('p');
+        p.textContent = 'Håll ut, vi skickar en söktrupp efter Render-serverns on-knapp!';
+        loadingIndicatorEl.appendChild(p);
+    }, 6000);
+
+    setTimeout(() => {
+        const p = document.createElement('p');
+        p.textContent = 'Render-servern är upptagen med att titta på kattfilmer...';
+        loadingIndicatorEl.appendChild(p);
+    }, 9000);
+
     try {
         const data = await fetchData();
 
@@ -39,14 +59,15 @@ async function updateDOM() {
 
             //Skriver ut i DOM
             workExpsEl.innerHTML += `
-                <div class="workExp">
-                    <h2>${exp.jobtitle} @ ${exp.companyname}</h2>
-                    <p>Plats: ${exp.location}</p>
-                    <p>Startdatum: ${startDate}</p>
-                    <p>Slutdatum: ${endDate}</p>
-                    <p>Beskrivning: ${exp.description}</p>
+                <article class="workExp">
+                    <h3>${exp.jobtitle} @ ${exp.companyname}</h3>
+                    <p><strong>Plats:</strong> ${exp.location}</p>
+                    <p><strong>Startdatum:</strong> ${startDate}</p>
+                    <p><strong>Slutdatum:</strong> ${endDate}</p>
+                    <p><strong>Beskrivning:</strong> ${exp.description}</p>
                     <button class="button deleteBtn" data-id="${exp.id}">Ta bort</button>
-                </div>
+                </article>
+                <span class="spanLine"></span>
             `;
         });
     } catch (error) {
