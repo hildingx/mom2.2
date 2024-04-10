@@ -10,6 +10,8 @@ document.getElementById('workExpForm').addEventListener('submit', async (event) 
     const enddate = document.getElementById('enddate').value.trim();
     const description = document.getElementById('description').value.trim();
 
+    const form = document.getElementById('workExpForm');
+
     //Validera input för att kontrollera att inga fält är tomma
     if (!companyname || !jobtitle || !location || !startdate || !enddate || !description) {
         alert('Alla fält måste fyllas i.');
@@ -30,7 +32,9 @@ document.getElementById('workExpForm').addEventListener('submit', async (event) 
         if (!response.ok) {
             alert('Arbetserfarenheten kunde inte läggas till');
         } else {
-        alert('Arbetserfarenhet tillagd');
+            alert('Arbetserfarenhet tillagd');
+            //Rensa formuläret
+            form.reset();
         }
     } catch {
         alert('Arbetserfarenheten kunde inte läggas till');

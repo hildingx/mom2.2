@@ -1,3 +1,5 @@
+export { updateDOM };
+
 window.onload = () => {
     updateDOM();
 };
@@ -5,7 +7,8 @@ window.onload = () => {
 //Funktion för att hämta data från api
 async function fetchData() {
     try {
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        //Används vid test av laddningsindikator
+        //await new Promise(resolve => setTimeout(resolve, 1000));
 
         const response = await fetch(`https://dt207g-mom2-1.onrender.com/api/workexperiences/`);
         const data = await response.json();
@@ -42,6 +45,7 @@ async function updateDOM() {
                     <p>Startdatum: ${startDate}</p>
                     <p>Slutdatum: ${endDate}</p>
                     <p>Beskrivning: ${exp.description}</p>
+                    <button class="button deleteBtn" data-id="${exp.id}">Ta bort</button>
                 </div>
             `;
         });
