@@ -1,11 +1,13 @@
 //Styling av element. 
 //Grid, flexbox och containers.
 
+@use 'base' as *;
+
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif
+    font-family: 'Montserrat', sans-serif;
 }
 
 .page-container {
@@ -15,7 +17,7 @@ html, body {
 }
 
 header {
-    background-color: #5a6f64;
+    background-color: $header-footer-color;
     height: 50px;
     box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 4px 5px -5px rgba(0, 0, 0, 0.1);
     z-index: 1;
@@ -38,7 +40,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #c7c7c7;
+    color: $header-footer-text-color;
     text-decoration: none;
     font-weight: bold;
     transition: 0.2s;
@@ -46,11 +48,11 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
-    color: #fff;
+    color: $white;
 }
 
 .current {
-    color: #fff;
+    color: $white;
 }
 
 main {
@@ -58,16 +60,22 @@ main {
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
-    background-color: #f7ebe6;
+    background-color: $background-color-main;
 
     h1 {
         text-align: center;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin: 100px 0 50px 0;
+    }
+
+    .cv {
+        font-family: 'Roboto Slab', serif;
+        font-size: 4em;
+        margin: 75px 0;
     }
 
     h2 {
         text-align: center;
+        font-size: clamp(1.2em, 3vw, 1.6em);;
     }
 }
 
@@ -79,8 +87,8 @@ main {
 }
 
 #workExps {
-    background-color: #f8f8f8;
-    border-color: #dbdbdb;
+    background-color: $background-color-form;
+    border-color: $border-color;
     border-width: 1px;
     border-style: solid;
     border-radius: 8px;
@@ -100,7 +108,7 @@ main {
     .spanLine {
         display: block;
         height: 1px;
-        background-color: #ff7f50;
+        background-color: $button-color;
         width: 80%;
         margin: 0 auto;
     }
@@ -110,11 +118,36 @@ main {
     }
 }
 
+.about-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        font-size: clamp(1.3em, 4vw, 2.2em);
+    }
+
+    h2 {
+        font-size: clamp(1.2em, 3vw, 1.6em);
+        margin-bottom: 10px;
+    }
+
+    p {
+        line-height: 1.5;
+        width: 80%;
+        max-width: 800px;
+    }
+
+    h2:last-of-type {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+}
+
 footer {
     text-align: center;
-    background-color: #5a6f64;
-    color: #fff;
-    padding: 50px;
+    background-color: $header-footer-color;
+    color: $header-footer-text-color;
+    padding: 30px;
     box-shadow: 0 -8px 10px -5px rgba(0, 0, 0, 0.2), 0 -4px 5px -5px rgba(0, 0, 0, 0.1);
     font-size: 1.2em;
     z-index: 1;

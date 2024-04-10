@@ -4,7 +4,7 @@ window.onload = () => {
     updateDOM();
 };
 
-//Funktion för att hämta data från api
+//Hämtar data från api
 async function fetchData() {
     try {
         //Används vid test av laddningsindikator
@@ -23,9 +23,10 @@ async function fetchData() {
 async function updateDOM() {
     //Laddningsindikator
     const loadingIndicatorEl = document.getElementById('loadingIndicator');
+    //Visa laddningsindikator
     loadingIndicatorEl.style.display = 'block';
 
-    //Funktioner för att lägga till extra text om datan tar lång tid att ladda
+    //Visa meddelanden om lång laddningstid
     setTimeout(() => {
         const p = document.createElement('p');
         p.textContent = 'Utvecklarna på Render måste ha tryckt på snooze-knappen igen...';
@@ -48,9 +49,10 @@ async function updateDOM() {
         const data = await fetchData();
 
         const workExpsEl = document.getElementById('workExps');
+        //Töm tidigare innehåll
         workExpsEl.innerHTML = '';
 
-        //Iterera över varje objekt
+        //Iterera över varje objekt och lägger till i DOM
         data.forEach(exp => {
             
             //Formatera datum - ta bort klockslag
